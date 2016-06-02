@@ -8,5 +8,5 @@ clean:
 	@rm -f test_repl
 
 test_repl:
-	${CC} ${CFLAGS} test_repl.cpp shoddy.cpp -o test_repl
+	${CC} ${CFLAGS} test_repl.cc shoddy.cc -o test_repl
 	./test_repl

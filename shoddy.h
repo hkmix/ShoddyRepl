@@ -7,19 +7,19 @@
 
 struct UserInput
 {
-    bool valid;
-    std::string command;
-    std::vector<std::string> args;
-    std::size_t arg_count;
+  bool valid;
+  std::string command;
+  std::vector<std::string> args;
+  std::size_t arg_count;
 };
 
 class Shoddy
 {
 public:
-    UserInput get_line(std::string prompt = "");
+  UserInput get_line(std::string prompt = "");
 
 private:
-    std::vector<std::string> tokenize(std::string);
+  std::vector<std::string> tokenize(std::string);
 };
 
 #endif
