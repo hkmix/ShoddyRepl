@@ -1,6 +1,7 @@
 #include "shoddy.h"
 
 #include <iostream>
+#include <iterator>
 #include <sstream>
 
 UserInput Shoddy::get_line(std::string prompt)
