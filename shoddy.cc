@@ -8,21 +8,25 @@ UserInput Shoddy::get_line(std::string prompt)
 {
   std::cout << prompt;
 
-  std::string input;
-  std::getline(std::cin, input);
-
   UserInput user_input;
   user_input.arg_count = 0;
-  user_input.raw_input = input;
 
-  if (std::cin.bad()) {
+  std::string input;
+  if (!std::getline(std::cin, input)) {
     std::cin.clear();
     return user_input;
   }
 
+  user_input.raw_input = input;
+
   if (std::cin.eof()) {
-    std::cin.clear();
     user_input.eof = true;
+    std::cin.clear();
+    return user_input;
+  }
+
+  if (std::cin.bad()) {
+    std::cin.clear();
     return user_input;
   }
 
