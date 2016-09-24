@@ -11,6 +11,7 @@ struct UserInput
   std::string command;
   std::vector<std::string> args;
   std::size_t arg_count;
+  std::string raw_input;
 };
 
 class Shoddy

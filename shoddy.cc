@@ -13,6 +13,7 @@ UserInput Shoddy::get_line(std::string prompt)
 
   UserInput user_input;
   user_input.arg_count = 0;
+  user_input.raw_input = input;
 
   if (std::cin.eof() || std::cin.bad()) {
     user_input.valid = false;
