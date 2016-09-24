@@ -15,21 +15,24 @@ UserInput Shoddy::get_line(std::string prompt)
   user_input.arg_count = 0;
   user_input.raw_input = input;
 
-  if (std::cin.eof() || std::cin.bad()) {
-    user_input.valid = false;
+  if (std::cin.bad()) {
+    return user_input;
+  }
+
+  if (std::cin.eof()) {
+    user_input.eof = true;
     return user_input;
   }
 
   auto tokens = tokenize(input);
 
   if (tokens.size() == 0) {
-    user_input.valid = false;
     return user_input;
   }
 
+  user_input.valid = true;
   user_input.arg_count = tokens.size() - 1;
   user_input.command = tokens[0];
-  user_input.valid = true;
 
   for (std::size_t i = 1; i < tokens.size(); ++i) {
     user_input.args.push_back(tokens[i]);

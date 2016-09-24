@@ -7,7 +7,8 @@
 
 struct UserInput
 {
-  bool valid;
+  bool valid = false;
+  bool eof = false;
   std::string command;
   std::vector<std::string> args;
   std::size_t arg_count;
