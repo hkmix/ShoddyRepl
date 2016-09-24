@@ -16,10 +16,12 @@ UserInput Shoddy::get_line(std::string prompt)
   user_input.raw_input = input;
 
   if (std::cin.bad()) {
+    std::cin.clear();
     return user_input;
   }
 
   if (std::cin.eof()) {
+    std::cin.clear();
     user_input.eof = true;
     return user_input;
   }
